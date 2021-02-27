@@ -52,8 +52,10 @@ bugs.run <- function(n.burnin,
     bugsCall <- paste(MultiBUGS.pgm,
                       "/PAR",
                       "script.txt")
-    print(bugsCall)
+  
   }
+  writeClipboard(bugsCall)
+
   if ((.Platform$OS.type == "windows" || useWINE) && debug){
     temp <- system(bugsCall, invisible = FALSE)
   } else {
